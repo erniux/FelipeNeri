@@ -1,0 +1,37 @@
+<div class="container-interno">
+
+	<%= form_with(model: [ @interno, tratamiento ], local: true) do |form| %>
+	<div class="row">
+		<div class="col-md-6">
+			<%= form.label :'tratamiento' %>:&nbsp;
+			<%= form.text_field :nombre_tratamiento, class:"form-control" %>
+		</div>
+		<div class="col-md-3">
+			<%= form.label :fecha_inicio %>:&nbsp;
+			<%= form.date_field :fecha_inicio, class: "form-control" %>
+		</div>
+		<div class="col-md-3">
+			<%= form.label :fecha_fin %>:&nbsp;
+			<%= form.date_field :fecha_fin, class: "form-control" %>
+		</div>
+	</div><br>
+	<div class="row">
+		<div class="col-md-4">
+			<%= form.label :total_horas %>:&nbsp;
+			<%= form.text_field :total_horas, class: "form-control" %>
+		</div>
+		 
+		
+		<div class="col-md-8">
+			<%= form.label :observaciones %>:&nbsp;
+			<%= form.text_area :observaciones, class:"form-control", placeholder:'Observaciones' %>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<%= form.submit  class: "btn alert-primary form-control" %>
+	</div>
+		 
+	<% end %> 
+
+</div>

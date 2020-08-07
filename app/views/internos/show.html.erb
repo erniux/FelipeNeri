@@ -1,0 +1,72 @@
+ <div class="container-interno">
+ 	<p>
+		<strong>Interno:</strong>
+		<strong><%= @interno.nombre.capitalize + ' ' + @interno.ap_paterno.capitalize + ' ' + @interno.ap_materno.capitalize %></strong>
+		<%= link_to 'Editar', edit_interno_path(@interno), class: "btn alert-success" %>
+		<%= link_to 'Regresar', internos_path, class: "btn alert-danger" %>
+	</p>
+
+	<a class="btn alert-primary form-control" data-toggle="collapse" href="#ingresos" role="button" aria-expanded="false" aria-controls="ingresos">Ingresos</a>
+	<div class="collapse multi-collapse" id="ingresos">
+		<% if @interno.ingresos.any? %>
+			<%= render @interno.ingresos %>
+		<% end %>
+		<h3>Agregar Ingreso</h3>
+		<%= render 'ingresos/form', ingreso: @interno.ingresos.build %>	
+
+	</div>
+	
+ <hr>
+ 	<a class="btn alert-secondary form-control" data-toggle="collapse" href="#familiares" role="button" aria-expanded="false" aria-controls="familiares">Familiares</a>
+	<div class="collapse multi-collapse" id="familiares">
+		<% if @interno.parientes.any? %>
+			<%= render @interno.parientes %>
+		<% end %>
+		<h2>Agregar Parientes:</h2>
+		<%= render 'parientes/form', pariente: @interno.parientes.build %>			 	
+	</div>
+
+<hr>	
+
+<a class="btn alert-info form-control" data-toggle="collapse" href="#tratamientos" role="button" aria-expanded="false" aria-controls="tratamientos">Tratamientos</a>
+	<div class="collapse multi-collapse" id="tratamientos">
+		<% if @interno.tratamientos.any? %>
+			<%= render @interno.tratamientos.order(fecha_inicio: :asc) %>
+		<% end %>
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarTratamiento" aria-expanded="false" aria-controls="agregarTratamiento">
+    		Agregar Tratamiento
+  		</button>
+	 
+		<div class="collapse" id="agregarTratamiento">
+  			<div class="card card-body">
+    			<%= render 'tratamientos/form', tratamiento: @interno.tratamientos.build %>	
+  			</div>
+		</div>
+	</div>
+<hr>
+
+<a class="btn alert-warning form-control" data-toggle="collapse" href="#egresos" role="button" aria-expanded="false" aria-controls="egresos">Egresos</a>
+	<div class="collapse multi-collapse" id="egresos">
+		<% if @interno.egresos.any? %>
+			<%= render @interno.egresos %>
+		<% end %>
+		<h2>Agregar Egreso:</h2>
+		<%= render 'egresos/form', egreso: @interno.egresos.build %>			 	
+	</div>
+<hr>
+
+<a class="btn alert-success form-control" data-toggle="collapse" href="#examenes" role="button" aria-expanded="false" aria-controls="examenes">Exámenes</a>
+	<div class="collapse multi-collapse" id="examenes">
+		 
+		<h2>Agregar responsable:</h2>
+	</div>
+
+<hr>
+
+<a class="btn alert-dark form-control" data-toggle="collapse" href="#responsables" role="button" aria-expanded="false" aria-controls="responsables">Responsables</a>
+	<div class="collapse multi-collapse" id="responsables">
+		 
+		<h2>Agregar Responsables:</h2>
+		 
+	</div>
+</div>

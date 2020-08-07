@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_hora: 2020-08-03 23:14:02
+  referido_institucion: false
+  institucion_referencia: MyString
+  hoja_referencia: false
+  tipo_ingreso: MyString
+  motivo_ingreso: MyText
+  descripcion_estado_salud: MyText
+  hombre: false
+  mayor_edad: false
+  dependencias: false
+  consecuencias: false
+  transtorno_mental: false
+  cumple: false
+  referirlo: MyText
+  nombre_entrevistador: MyString
+  cargo_entrevistador: MyString
+  interno: one
+
+two:
+  fecha_hora: 2020-08-03 23:14:02
+  referido_institucion: false
+  institucion_referencia: MyString
+  hoja_referencia: false
+  tipo_ingreso: MyString
+  motivo_ingreso: MyText
+  descripcion_estado_salud: MyText
+  hombre: false
+  mayor_edad: false
+  dependencias: false
+  consecuencias: false
+  transtorno_mental: false
+  cumple: false
+  referirlo: MyText
+  nombre_entrevistador: MyString
+  cargo_entrevistador: MyString
+  interno: two

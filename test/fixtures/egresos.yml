@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diagnostico_egreso: MyText
+  observaciones_egreso: MyText
+  ingresos: one
+  motivo_salidas: one
+  tratamiento_interno: one
+
+two:
+  diagnostico_egreso: MyText
+  observaciones_egreso: MyText
+  ingresos: two
+  motivo_salidas: two
+  tratamiento_interno: two

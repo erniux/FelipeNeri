@@ -1,0 +1,2 @@
+class TipoTratamiento < ApplicationRecord
+end

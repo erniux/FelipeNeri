@@ -1,0 +1,5 @@
+<%= form_with(model: [ @interno, pariente ], local: true) do |form| %>
+		<%= form.label :nombre %>
+		<%= form.datetime_field :nombre %>
+		<%= form.submit %>
+<% end %>

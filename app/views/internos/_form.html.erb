@@ -1,0 +1,57 @@
+<div class="container-interno">
+<%= form_with(model: interno, local: true) do |form| %>
+  <% if interno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(interno.errors.count, "error") %> prohibited this prueba from being saved:</h2>
+
+      <ul>
+        <% interno.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-md-4">Nombre <%= form.text_field :nombre, class: "form-control" %></div>
+  <div class="col-md-4">Apellido Paterno <%= form.text_field :ap_paterno, class: "form-control" %></div>
+  <div class="col-md-4">Apellido Materno <%= form.text_field :ap_materno, class: "form-control" %></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">Fecha de Nacimiento <%= form.date_field :fecha_nacimiento, class: "form-control" %></div>
+  <div class="col-md-4">Calle <%= form.text_field :calle, class: "form-control" %></div>
+  <div class="col-md-2">Número exterior <%= form.text_field :numero, class: "form-control" %></div>
+  <div class="col-md-2">Número interior <%= form.text_field :interior, class: "form-control" %></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">Colonia <%= form.text_field :colonia, class: "form-control" %></div>
+  <div class="col-md-4">Municipio <%= form.text_field :municipio, class: "form-control" %></div>
+  <div class="col-md-4">Estado <%= form.text_field :estado, class: "form-control" %></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">Teléfono Fijo <%= form.text_field :telefono_fijo, class: "form-control" %></div>
+  <div class="col-md-4">Teléfono Celular <%= form.text_field :telefono_celular, class: "form-control" %></div>
+  <div class="col-md-4">Teléfono recados <%= form.text_field :telefono_otro, class: "form-control" %></div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">Nacionalidad <%= form.text_field :nacionalidad, class: "form-control" %></div>
+  <div class="col-md-3">Estado Civil <%= form.text_field :estado_civil, class: "form-control" %></div>
+  <div class="col-md-3">Escolaridad <%= form.text_field :escolaridad, class: "form-control" %></div>
+  <div class="col-md-3  ">Ocupación <%= form.text_field :ocupacion, class: "form-control" %></div>
+</div>
+
+  <br>
+ 
+  <div class="actions">
+    <p><%= form.submit "Guardar", class: "form-control btn alert-primary" %></p>
+    <p><%= link_to 'Cancelar', internos_path, class: "form-control btn alert-danger" %></p>
+  </div>
+ 
+<% end %>
+
+</div>
+ 

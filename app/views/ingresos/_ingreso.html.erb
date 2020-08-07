@@ -1,0 +1,5 @@
+<p><%= ingreso.id %> 
+<%= link_to ingreso.fecha_hora, interno_ingreso_path(@interno, ingreso) %>
+<%= render 'ingresos/form', ingreso: ingreso %>
+<%= link_to "Eliminar ingreso", interno_ingreso_path(@interno, ingreso), method: :delete %></p>
+

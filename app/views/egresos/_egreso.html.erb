@@ -1,0 +1,9 @@
+<p><%= egreso.id %> | <%= link_to egreso.diagnostico_egreso, interno_egreso_path(@interno, egreso) %></p>
+
+<p>Ediitar Egreso </p>
+
+<%= render 'egresos/form', egreso: egreso %>
+
+<p><%= link_to "Eliminar egreso", interno_egreso_path(@interno, egreso), method: :delete %></p>
+
+<hr>

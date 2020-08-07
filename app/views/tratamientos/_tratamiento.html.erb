@@ -1,0 +1,16 @@
+<br> 	
+ <div class="row"> 
+	<div class="col-md-10">
+		<%= link_to tratamiento.nombre_tratamiento, interno_tratamiento_path(@interno, tratamiento)  %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to edit_interno_tratamiento_path(@interno, tratamiento), class: "btn alert-info", local: true  do %>
+			 <%= fa_icon 'file' %>
+		<% end %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to interno_tratamiento_path(@interno, tratamiento), method: :delete, data:{ confirm: '¿Confirma eliminar el registro?'}, class: "btn alert-danger"  do %>
+			<i><%= fa_icon 'trash'  %></i>
+		<% end %>
+	</div>
+</div>

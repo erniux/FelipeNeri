@@ -1,0 +1,10 @@
+<%= form_with(model: [ @interno, egreso ], local: true) do |form| %>
+	<p>
+		<%= form.label :diagnostico_egreso %>
+		<%= form.text_field :diagnostico_egreso %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+
+<% end %>

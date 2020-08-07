@@ -1,0 +1,7 @@
+<%= form_with(model: [ @interno, ingreso ], local: true) do |form| %>
+		<%= form.label :fecha_hora %>
+		<%= form.datetime_field :fecha_hora %>
+		<%= form.submit %>
+<% end %>
+
+

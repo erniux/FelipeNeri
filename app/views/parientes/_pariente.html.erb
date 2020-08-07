@@ -1,0 +1,3 @@
+<p><%= pariente.id %> | <%= link_to pariente.nombre, interno_pariente_path(@interno, pariente) %>
+<%= render 'parientes/form', pariente: pariente %>
+<%= link_to "Eliminar pariente", interno_pariente_path(@interno, pariente), method: :delete %></p>

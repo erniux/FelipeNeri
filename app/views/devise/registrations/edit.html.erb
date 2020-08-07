@@ -1,0 +1,48 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :usuario %><br />
+    <%= f.text_field :usuario, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'correo' %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Esperando confirmación de: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :'contraseña' %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password  %>
+    <% if @minimum_password_length %>
+      <br />
+      <em>mínimo <%= @minimum_password_length %> caracteres</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'confirmar contraseña' %><br />
+    <%= f.password_field :password_confirmation  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'contraseña actual' %> <i>(rellenar para confirmar los cambios)</i><br />
+    <%= f.password_field :current_password  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Actualizar", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<h3>Eliminar la cuenta</h3>
+
+<p> <%= button_to "Cancelar", registration_path(resource_name), data: { confirm: "¿Esta seguro??" }, method: :delete, class: "btn btn-danger" %></p>
+
+<%= link_to "Regresar", :back, class: "btn btn-info" %>
