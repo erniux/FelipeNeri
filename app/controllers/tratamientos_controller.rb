@@ -3,6 +3,15 @@ class TratamientosController < ApplicationController
     before_action :set_tratamiento, only: [:show, :edit, :update, :destroy]
    
  def show
+   render_404
+end
+
+def render_404
+  respond_to do |format|
+    format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+    format.xml  { head :not_found }
+    format.any  { head :not_found }
+  end
 end
 
 def edit
