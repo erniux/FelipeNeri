@@ -1,5 +1,17 @@
-<p><%= ingreso.id %> 
-<%= link_to ingreso.fecha_hora, interno_ingreso_path(@interno, ingreso) %>
-<%= render 'ingresos/form', ingreso: ingreso %>
-<%= link_to "Eliminar ingreso", interno_ingreso_path(@interno, ingreso), method: :delete %></p>
-
+ <br> 	
+ <div class="row"> 
+	<div class="col-md-10">
+		<%= ingreso.fecha_hora.strftime("%d/%m/%Y %H:%M") %>
+		<% link_to ingreso.fecha_hora.strftime("%d/%m/%Y %H:%M"), interno_ingreso_path(@interno, ingreso)  %> 
+	</div>
+	<div class="col-md-1">
+		<%= link_to edit_interno_ingreso_path(@interno, ingreso), class: "btn alert-info", local: true  do %>
+			 <%= fa_icon 'file' %>
+		<% end %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to interno_ingreso_path(@interno, ingreso), method: :delete, data:{ confirm: '¿Confirma eliminar el registro?'}, class: "btn alert-danger"  do %>
+			<i><%= fa_icon 'trash'  %></i>
+		<% end %>
+	</div>
+</div>

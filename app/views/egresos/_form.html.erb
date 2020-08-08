@@ -1,10 +1,24 @@
-<%= form_with(model: [ @interno, egreso ], local: true) do |form| %>
-	<p>
-		<%= form.label :diagnostico_egreso %>
-		<%= form.text_field :diagnostico_egreso %>
-	</p>
-	<p>
-		<%= form.submit %>
-	</p>
+<div class="container-interno">
+	<%= form_with(model: [ @interno, egreso ], local: true) do |form| %>
+		<div class="row">
+			<div class="col-md-4">
+				<%= form.label :'fecha_egreso' %>:&nbsp;
+				<%= form.date_field :fecha_egreso, class:"form-control" %>
+			</div>
+			 
+			<div class="col-md-4">
+				<%= form.label :diagnostico_egreso %>:&nbsp;
+				<%= form.text_area :diagnostico_egreso, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :observaciones_egreso %>:&nbsp;
+				<%= form.text_area :observaciones_egreso, class: "form-control" %>
+			</div>
+		 </div>
+		<br>
+		<div class="row">
+			<%= form.submit  class: "btn alert-primary form-control" %>
+		</div>
+	<% end %>
 
-<% end %>
+</div>

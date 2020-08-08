@@ -1,5 +1,81 @@
-<%= form_with(model: [ @interno, pariente ], local: true) do |form| %>
-		<%= form.label :nombre %>
-		<%= form.datetime_field :nombre %>
-		<%= form.submit %>
-<% end %>
+<div class="container-interno">
+	<%= form_with(model: [ @interno, pariente ], local: true) do |form| %>
+			<div class="row">
+			<div class="col-md-4">
+				<%= form.label :'nombre' %>:&nbsp;
+				<%= form.text_field :nombre, class:"form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :ap_paterno %>:&nbsp;
+				<%= form.text_field :ap_paterno, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :ap_materno %>:&nbsp;
+				<%= form.text_field :ap_materno, class: "form-control" %>
+			</div>
+		</div><br>
+		<div class="row">
+			<div class="col-md-4">
+				<%= form.label :fecha_nacimiento %>:&nbsp;
+				<%= form.date_field :fecha_nacimiento, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :ocupacion %>:&nbsp;
+				<%= form.text_field :ocupacion, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :parentesco %>:&nbsp;
+				<%= form.text_field :parentesco, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= form.label :calle %>:&nbsp;
+				<%= form.text_field :calle, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :numero %>:&nbsp;
+				<%= form.text_field :numero, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :interior %>:&nbsp;
+				<%= form.text_field :interior, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= form.label :colonia %>:&nbsp;
+				<%= form.text_field :colonia, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :municipio %>:&nbsp;
+				<%= form.text_field :municipio, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :estado %>:&nbsp;
+				<%= form.text_field :estado, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= form.label :telefono_fijo %>:&nbsp;
+				<%= form.text_field :telefono_fijo, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :telefono_celular %>:&nbsp;
+				<%= form.text_field :telefono_celular, class: "form-control" %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :telefono_recados %>:&nbsp;
+				<%= form.text_field :telefono_recados, class: "form-control" %>
+			</div>
+		</div>
+
+		<br>
+		<div class="row">
+			<%= form.submit  class: "btn alert-primary form-control" %>
+		</div>
+	<% end %>
+
+</div>
+

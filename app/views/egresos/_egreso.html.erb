@@ -1,9 +1,17 @@
-<p><%= egreso.id %> | <%= link_to egreso.diagnostico_egreso, interno_egreso_path(@interno, egreso) %></p>
-
-<p>Ediitar Egreso </p>
-
-<%= render 'egresos/form', egreso: egreso %>
-
-<p><%= link_to "Eliminar egreso", interno_egreso_path(@interno, egreso), method: :delete %></p>
-
-<hr>
+<br> 	
+ <div class="row"> 
+	<div class="col-md-10">
+		<%= egreso.fecha_egreso  %>
+		<% link_to egreso.fecha_egreso, interno_ingreso_path(@interno, egreso)  %> 
+	</div>
+	<div class="col-md-1">
+		<%= link_to edit_interno_egreso_path(@interno, egreso), class: "btn alert-info", local: true  do %>
+			 <%= fa_icon 'file' %>
+		<% end %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to interno_egreso_path(@interno, egreso), method: :delete, data:{ confirm: '¿Confirma eliminar el registro?'}, class: "btn alert-danger"  do %>
+			<i><%= fa_icon 'trash'  %></i>
+		<% end %>
+	</div>
+</div>

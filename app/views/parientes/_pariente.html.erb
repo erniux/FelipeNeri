@@ -1,3 +1,17 @@
-<p><%= pariente.id %> | <%= link_to pariente.nombre, interno_pariente_path(@interno, pariente) %>
-<%= render 'parientes/form', pariente: pariente %>
-<%= link_to "Eliminar pariente", interno_pariente_path(@interno, pariente), method: :delete %></p>
+ <br> 	
+ <div class="row"> 
+	<div class="col-md-10">
+		<%= pariente.nombre + ' ' + pariente.ap_paterno + ' ' + pariente.ap_materno %>
+		<% link_to pariente.nombre, interno_pariente_path(@interno, pariente)  %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to edit_interno_pariente_path(@interno, pariente), class: "btn alert-info", local: true  do %>
+			 <%= fa_icon 'file' %>
+		<% end %>
+	</div>
+	<div class="col-md-1">
+		<%= link_to interno_pariente_path(@interno, pariente), method: :delete, data:{ confirm: '¿Confirma eliminar el registro?'}, class: "btn alert-danger"  do %>
+			<i><%= fa_icon 'trash'  %></i>
+		<% end %>
+	</div>
+</div>

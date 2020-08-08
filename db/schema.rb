@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_140141) do
+ActiveRecord::Schema.define(version: 2020_08_08_031647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_140141) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "interno_id", null: false
+    t.date "fecha_egreso"
     t.index ["interno_id"], name: "index_egresos_on_interno_id"
   end
 

@@ -9,21 +9,35 @@
 	<a class="btn alert-primary form-control" data-toggle="collapse" href="#ingresos" role="button" aria-expanded="false" aria-controls="ingresos">Ingresos</a>
 	<div class="collapse multi-collapse" id="ingresos">
 		<% if @interno.ingresos.any? %>
-			<%= render @interno.ingresos %>
+			<%= render @interno.ingresos.order(fecha_hora: :asc) %>
 		<% end %>
-		<h3>Agregar Ingreso</h3>
-		<%= render 'ingresos/form', ingreso: @interno.ingresos.build %>	
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarTratamiento" aria-expanded="false" aria-controls="agregarTratamiento">
+    		Agregar Ingreso
+  		</button>
+	 
+		<div class="collapse" id="agregarTratamiento">
+  			<div class="card card-body">
+    			<%= render 'ingresos/form', ingreso: @interno.ingresos.build %>	
+  			</div>
+		</div>
 
 	</div>
 	
  <hr>
- 	<a class="btn alert-secondary form-control" data-toggle="collapse" href="#familiares" role="button" aria-expanded="false" aria-controls="familiares">Familiares</a>
-	<div class="collapse multi-collapse" id="familiares">
+ 	<a class="btn alert-secondary form-control" data-toggle="collapse" href="#parientes" role="button" aria-expanded="false" aria-controls="parientes">Familiares</a>
+	<div class="collapse multi-collapse" id="parientes">
 		<% if @interno.parientes.any? %>
-			<%= render @interno.parientes %>
+			<%= render @interno.parientes.order(id: :asc) %>
 		<% end %>
-		<h2>Agregar Parientes:</h2>
-		<%= render 'parientes/form', pariente: @interno.parientes.build %>			 	
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarPariente" aria-expanded="false" aria-controls="agregarPariente">
+    		Agregar Familiar
+  		</button>
+	 
+		<div class="collapse" id="agregarPariente">
+  			<div class="card card-body">
+    			<%= render 'parientes/form', pariente: @interno.parientes.build %>	
+  			</div>
+		</div>
 	</div>
 
 <hr>	
@@ -48,17 +62,24 @@
 <a class="btn alert-warning form-control" data-toggle="collapse" href="#egresos" role="button" aria-expanded="false" aria-controls="egresos">Egresos</a>
 	<div class="collapse multi-collapse" id="egresos">
 		<% if @interno.egresos.any? %>
-			<%= render @interno.egresos %>
+			<%= render @interno.egresos.order(fecha_egreso: :asc) %>
 		<% end %>
-		<h2>Agregar Egreso:</h2>
-		<%= render 'egresos/form', egreso: @interno.egresos.build %>			 	
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarEgreso" aria-expanded="false" aria-controls="agregarEgreso">
+    		Agregar Egreso
+  		</button>
+	 
+		<div class="collapse" id="agregarEgreso">
+  			<div class="card card-body">
+    			<%= render 'egresos/form', egreso: @interno.egresos.build %>	
+  			</div>
+		</div>			 	
 	</div>
 <hr>
 
 <a class="btn alert-success form-control" data-toggle="collapse" href="#examenes" role="button" aria-expanded="false" aria-controls="examenes">Exámenes</a>
 	<div class="collapse multi-collapse" id="examenes">
 		 
-		<h2>Agregar responsable:</h2>
+		<h4>Agregar exámen:</h4>
 	</div>
 
 <hr>
@@ -66,7 +87,15 @@
 <a class="btn alert-dark form-control" data-toggle="collapse" href="#responsables" role="button" aria-expanded="false" aria-controls="responsables">Responsables</a>
 	<div class="collapse multi-collapse" id="responsables">
 		 
-		<h2>Agregar Responsables:</h2>
+		<h4>Agregar Responsables:</h4>
+		 
+	</div>
+<hr>
+
+<a class="btn alert-danger form-control" data-toggle="collapse" href="#documentos" role="button" aria-expanded="false" aria-controls="documentos">Documentos</a>
+	<div class="collapse multi-collapse" id="documentos">
+		 
+		<h4>Documentos:</h4>
 		 
 	</div>
 </div>

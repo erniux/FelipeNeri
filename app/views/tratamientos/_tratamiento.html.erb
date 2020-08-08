@@ -1,7 +1,8 @@
 <br> 	
  <div class="row"> 
 	<div class="col-md-10">
-		<%= link_to tratamiento.nombre_tratamiento, interno_tratamiento_path(@interno, tratamiento)  %>
+		<%= tratamiento.nombre_tratamiento %>
+		<% link_to tratamiento.nombre_tratamiento, interno_tratamiento_path(@interno, tratamiento)  %>
 	</div>
 	<div class="col-md-1">
 		<%= link_to edit_interno_tratamiento_path(@interno, tratamiento), class: "btn alert-info", local: true  do %>
