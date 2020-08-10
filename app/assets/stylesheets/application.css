@@ -53,3 +53,48 @@
   padding-right: 5em;
 }
 
+.media {
+  padding: 10px 0;
+}
+
+.media img, .fileinput .thumbnail, .thumbnail img {
+  border-radius: 50%;
+}
+
+.media-left {
+  padding: 0 20px;
+}
+
+.media-heading {
+  color: #dd5638;
+  margin-bottom: 10px;
+}
+
+.media-body {
+  padding-top: 15px;
+}
+
+.imagen {
+  content: url("logo.jpg");
+  margin-top: 3rem;
+  margin-left: 6rem;
+  width: 60%;
+  align-self: center;
+   
+}
+
+@media screen and (max-width: 600px) {
+       table {
+           width:100%;
+       }
+       thead {
+           display: none;
+       }
+        
+       tbody td {
+           display: block;
+           text-align:center;
+           width:100%;
+       }
+        
+}
