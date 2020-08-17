@@ -13,11 +13,12 @@
  *= require bootstrap
  *= require font-awesome
  *= require gritter
+ *= require pdf
  *= require_tree .
  *= require_self
  */ 
- 
-@import "pdf";
+/*@import "gritter";
+@import "pdf"; */
 
 .navbar {
   -moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
