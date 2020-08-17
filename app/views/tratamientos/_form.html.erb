@@ -4,27 +4,27 @@
 	<div class="row">
 		<div class="col-md-6">
 			<%= form.label :'tratamiento' %>:&nbsp;
-			<%= form.text_field :nombre_tratamiento, class:"form-control" %>
+			<%= form.text_field :nombre_tratamiento, class: "form-control", required: true %>
 		</div>
 		<div class="col-md-3">
 			<%= form.label :fecha_inicio %>:&nbsp;
-			<%= form.date_field :fecha_inicio, class: "form-control" %>
+			<%= form.date_field :fecha_inicio, class: "form-control", required: true %>
 		</div>
 		<div class="col-md-3">
 			<%= form.label :fecha_fin %>:&nbsp;
-			<%= form.date_field :fecha_fin, class: "form-control" %>
+			<%= form.date_field :fecha_fin, class: "form-control", required: true %>
 		</div>
 	</div><br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= form.label :total_horas %>:&nbsp;
-			<%= form.text_field :total_horas, class: "form-control" %>
+			<%= form.text_field :total_horas, class: "form-control", required: true %>
 		</div>
 		 
 		
 		<div class="col-md-8">
 			<%= form.label :observaciones %>:&nbsp;
-			<%= form.text_area :observaciones, class:"form-control", placeholder:'Observaciones' %>
+			<%= form.text_area :observaciones, class:"form-control", placeholder:'Observaciones', required: true %>
 		</div>
 	</div>
 	<br>

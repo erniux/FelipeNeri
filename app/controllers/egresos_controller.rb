@@ -46,11 +46,12 @@ def update
 
      
     def egreso_params
-      params.require(:egreso).permit(:diagnostico_egreso, :observaciones_egreso, :fecha_egreso)
+      params.require(:egreso).permit(:diagnostico_egreso, :observaciones_egreso, :fecha_egreso,:usuario, :familiar, :concluido, 
+                                     :autoridad, :referencia, :abandono, :defuncion)
     end
  
 end
-
+ 
 
 
 

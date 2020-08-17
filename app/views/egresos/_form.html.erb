@@ -3,18 +3,76 @@
 		<div class="row">
 			<div class="col-md-4">
 				<%= form.label :'fecha_egreso' %>:&nbsp;
-				<%= form.date_field :fecha_egreso, class:"form-control" %>
+				<%= form.date_field :fecha_egreso, class:"form-control", required: true %>
 			</div>
 			 
 			<div class="col-md-4">
 				<%= form.label :diagnostico_egreso %>:&nbsp;
-				<%= form.text_area :diagnostico_egreso, class: "form-control" %>
+				<%= form.text_area :diagnostico_egreso, class: "form-control", required: true %>
 			</div>
 			<div class="col-md-4">
 				<%= form.label :observaciones_egreso %>:&nbsp;
-				<%= form.text_area :observaciones_egreso, class: "form-control" %>
+				<%= form.text_area :observaciones_egreso, class: "form-control", required: true %>
 			</div>
-		 </div>
+		</div><br>
+		<h3>Motivos de Salida</h3><br>
+		<div class="row">
+			<div class="col-md-10">
+				Solicitud del Usuario
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :usuario, class:"form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				Solicitud de un familiar
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :familiar, class:"form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				Trataminento concluido
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :concluido, class:"form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				Disposición de alguna autoridad legal competente
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :autoridad, class:"form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				Referencia
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :referencia, class:"form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				Abandonó las instalaciones sin consentimiento del responsable del tratamiento
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :abandono, class:"form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				Defunción
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :defuncion, class:"form-control" %>
+			</div>
+		</div>
+
 		<br>
 		<div class="row">
 			<%= form.submit  class: "btn alert-primary form-control" %>
@@ -22,3 +80,4 @@
 	<% end %>
 
 </div>
+ 

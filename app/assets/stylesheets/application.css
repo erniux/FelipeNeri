@@ -12,11 +12,12 @@
  *
  *= require bootstrap
  *= require font-awesome
+ *= require gritter
  *= require_tree .
  *= require_self
- */
- 
-
+ */ 
+@import "gritter";
+@import "pdf";
 
 .navbar {
   -moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -97,4 +98,19 @@
            width:100%;
        }
         
+}
+
+.custom_gritter {
+  background-color: green;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.custom_error {
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
 }

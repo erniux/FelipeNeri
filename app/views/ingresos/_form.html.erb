@@ -3,82 +3,110 @@
 		<div class="row">
 			<div class="col-md-4">
 				<%= form.label :'fecha_hora' %>:&nbsp;
-				<%= form.date_field :fecha_hora, class:"form-control" %>
+				<%= form.date_field :fecha_hora, class: "form-control", required: true %>
 			</div>
-			<div class="col-md-4">
-				<%= form.label :referido_institucion %>:&nbsp;
-				<%= form.check_box :referido_institucion, class: "form-control" %>
+			<div class="col-md-3">
+				<p>¿Lo refiere alguna Institutción?</p>
+				<p>¿Presenta hoja de referencia?</p>
+			</div> 
+			<div class="col-md-1">
+				<p><%= form.check_box :referido_institucion, label: "¿Lo refiere alguna Institutción?" %></p>
+				<p><%= form.check_box :hoja_referencia, label: "¿Presenta hoja de referencia?" %></p>
 			</div>
 			<div class="col-md-4">
 				<%= form.label :institucion_referencia %>:&nbsp;
 				<%= form.text_field :institucion_referencia, class: "form-control" %>
 			</div>
 		</div><br>
-		<div class="row">
-		<div class="col-md-4">
-			<%= form.label :hoja_referencia %>:&nbsp;
-			<%= form.check_box :hoja_referencia, class: "form-control" %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :tipo_ingreso %>:&nbsp;
-			<%= form.text_field :tipo_ingreso, class:"form-control", placeholder:'Observaciones' %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :motivo_ingreso %>:&nbsp;
-			<%= form.text_field :motivo_ingreso, class:"form-control", placeholder:'Observaciones' %>
-		</div>
+		<div class="row"> 
+			<div class="col-md-4">
+				<%= form.label :tipo_ingreso %>:&nbsp;
+			 	<%= form.select(:tipo_ingreso, ['Voluntario','Involuntario', 'Obligatorio'], { include_blank: true }, { class: 'form-control' }) %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :'Motivo de Consulta' %>:&nbsp;
+				<%= form.text_area :motivo_ingreso, class:"form-control", placeholder:'Motivo de Consulta', required: true %>
+			</div>
 		</div>
 		<div class="row">
-		<div class="col-md-4">
-			<%= form.label :descripcion_estado_salud %>:&nbsp;
-			<%= form.text_area :descripcion_estado_salud, class: "form-control" %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :hombre %>:&nbsp;
-			<%= form.check_box :hombre, class:"form-control", placeholder:'Observaciones' %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :mayor_edad %>:&nbsp;
-			<%= form.check_box :mayor_edad, class:"form-control", placeholder:'Observaciones' %>
-		</div>
+			<div class="col-md-12">
+				<%= form.label :'Desceripción breve del estado de salud general del usuario' %>:&nbsp;
+				<%= form.text_area :descripcion_estado_salud, class: "form-control", placeholder: "Estado de Salud", required: true %>
+			</div>
+		</div><br>
+		<h3>Criterios Clínicos de inclusión al tratamiento</h3><br>
+		<div class="row">
+			<div class="col-md-10">
+				¿El usuario es hombre?
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :hombre, class:"form-control" %>
+			</div>
 		</div>
 		<div class="row">
-		<div class="col-md-4">
-			<%= form.label :dependencias %>:&nbsp;
-			<%= form.check_box :dependencias, class: "form-control" %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :consecuencias %>:&nbsp;
-			<%= form.check_box :consecuencias, class:"form-control", placeholder:'Observaciones' %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :transtorno_mental %>:&nbsp;
-			<%= form.check_box :transtorno_mental, class:"form-control", placeholder:'Observaciones' %>
-		</div>
+			<div class="col-md-10">
+				¿El usuario es mayor de edad? 
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :mayor_edad, class:"form-control" %>
+			</div>
 		</div>
 		<div class="row">
-		<div class="col-md-4">
-			<%= form.label :cumple %>:&nbsp;
-			<%= form.check_box :cumple, class: "form-control" %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :consecuencias %>:&nbsp;
-			<%= form.check_box :consecuencias, class:"form-control", placeholder:'Observaciones' %>
-		</div>
-		<div class="col-md-4">
-			<%= form.label :referirlo %>:&nbsp;
-			<%= form.check_box :referirlo, class:"form-control", placeholder:'Observaciones' %>
-		</div>
+			<div class="col-md-10">
+				¿El usuario presenta un nivel de dependencia al alcohol y/o drogas?
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :dependencias, class: "form-control" %>
+			</div>
 		</div>
 		<div class="row">
-		<div class="col-md-4">
-			<%= form.label :nombre_entrevistador %>:&nbsp;
-			<%= form.text_field :nombre_entrevistador, class: "form-control" %>
+			<div class="col-md-10">
+				¿El usuario presenta alguna(s) concecuencia(s) asociada(s) al consumo?
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :consecuencias, class:"form-control" %>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<%= form.label :cargo_entrevistador %>:&nbsp;
-			<%= form.text_field :cargo_entrevistador, class:"form-control" %>
-		</div>	 
+		<div class="row">
+			<div class="col-md-10">
+				¿El usuario presenta algun transtorno mental o psiquiátrico que le impida beneficiarse del tratamiento?
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :transtorno_mental, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				¿El usuario cumple con todos los criterios de admisión al tratamiento?
+			</div>
+			<div class="col-md-2">
+				<%= form.check_box :cumple, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-7">
+				En caso de no haber cumplido los criterios, indicar el lugar al que será referido:
+			</div>
+			<div class="col-md-5">
+				<%= form.text_area :referirlo, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= form.label :nombre_entrevistador %>:&nbsp;
+				<%= form.text_field :nombre_entrevistador, class: "form-control", placeholder: 'Nombre entrevistador', required: true %>
+			</div>
+			<div class="col-md-4">
+				<%= form.label :cargo_entrevistador %>:&nbsp;
+				<%= form.text_field :cargo_entrevistador, class:"form-control", placeholder: 'Cargo entrevistador', required: true %>
+			</div>	 
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<%= form.label :'duración del tratamiento' %>:&nbsp;
+				<%= form.text_field :duracion, class:"form-control", placeholder: 'Duración del tratamiento en semanas', required: true %>
+
+			</div>
 		</div>
 		<br>
 		<div class="row">

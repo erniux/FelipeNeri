@@ -1,15 +1,9 @@
 <div class="container-interno">
 <%= form_with(model: interno, local: true) do |form| %>
-  <% if interno.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(interno.errors.count, "error") %> prohibited this prueba from being saved:</h2>
-
-      <ul>
-        <% interno.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <% if interno.errors.any? %> 
+    <% interno.errors.full_messages.each do |message| %>
+       <%= js add_gritter(message, :title => "Internos.", :sticky => false,  :class_name => "custom_error") %>
+    <% end %>
   <% end %>
 
 <div class="row">
@@ -19,16 +13,24 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4">Fecha de Nacimiento <%= form.date_field :fecha_nacimiento, class: "form-control" %></div>
-  <div class="col-md-4">Calle <%= form.text_field :calle, class: "form-control" %></div>
-  <div class="col-md-2">Número exterior <%= form.text_field :numero, class: "form-control" %></div>
-  <div class="col-md-2">Número interior <%= form.text_field :interior, class: "form-control" %></div>
+  <div class="col-md-6">Fecha de Nacimiento <%= form.date_field :fecha_nacimiento, class: "form-control" %></div>
+  <div class="col-md-6">
+        <%= form.label :sexo %>:&nbsp;
+        <%= form.select(:sexo, ['Masculino','Femenino', 'Otro'], { include_blank: true }, { class: 'form-control' }) %>
+  </div>
 </div>
 
 <div class="row">
+  <div class="col-md-4">Calle <%= form.text_field :calle, class: "form-control" %></div>
+  <div class="col-md-2">Número exterior <%= form.text_field :numero, class: "form-control" %></div>
+  <div class="col-md-2">Número interior <%= form.text_field :interior, class: "form-control" %></div>
   <div class="col-md-4">Colonia <%= form.text_field :colonia, class: "form-control" %></div>
+</div>
+
+<div class="row">
   <div class="col-md-4">Municipio <%= form.text_field :municipio, class: "form-control" %></div>
   <div class="col-md-4">Estado <%= form.text_field :estado, class: "form-control" %></div>
+  <div class="col-md-4">Código Postal <%= form.text_field :codigo_postal, class: "form-control" %></div>
 </div>
 
 <div class="row">
@@ -42,6 +44,12 @@
   <div class="col-md-3">Estado Civil <%= form.text_field :estado_civil, class: "form-control" %></div>
   <div class="col-md-3">Escolaridad <%= form.text_field :escolaridad, class: "form-control" %></div>
   <div class="col-md-3  ">Ocupación <%= form.text_field :ocupacion, class: "form-control" %></div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">¿Cuenta con servicio médico?&nbsp;<%= form.check_box :servicio_medico  %></div>
+  <div class="col-md-8">número de afiliación:&nbsp;<%= form.text_field :num_afiliacion, class: "form-control" %></div>
+ 
 </div>
 
   <br>

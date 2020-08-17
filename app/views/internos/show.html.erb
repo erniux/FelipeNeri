@@ -96,6 +96,8 @@
 	<div class="collapse multi-collapse" id="documentos">
 		 
 		<h4>Documentos:</h4>
+		<p><%= link_to 'Generar Hoja Ingreso', ultimo_ingreso_path(@interno, format: :pdf), class: "btn btn-outline-success", target: "_blank" %>
+		<p><%= link_to 'Generar Hoja Egreso', ultimo_egreso_path(@interno, format: :pdf), class: "btn btn-outline-primary", target: "_blank" %>
 		 
 	</div>
 </div>

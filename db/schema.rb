@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_031647) do
+ActiveRecord::Schema.define(version: 2020_08_17_212424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2020_08_08_031647) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "interno_id", null: false
     t.date "fecha_egreso"
+    t.boolean "usuario"
+    t.boolean "familiar"
+    t.boolean "concluido"
+    t.boolean "autoridad"
+    t.boolean "referencia"
+    t.boolean "abandono"
+    t.boolean "defuncion"
     t.index ["interno_id"], name: "index_egresos_on_interno_id"
   end
 
@@ -45,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_08_08_031647) do
     t.bigint "interno_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "duracion"
     t.index ["interno_id"], name: "index_ingresos_on_interno_id"
   end
 
@@ -68,6 +76,10 @@ ActiveRecord::Schema.define(version: 2020_08_08_031647) do
     t.string "ocupacion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sexo"
+    t.boolean "servicio_medico"
+    t.string "num_afiliacion"
+    t.string "codigo_postal"
   end
 
   create_table "motivo_salidas", force: :cascade do |t|
@@ -95,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_08_08_031647) do
     t.bigint "interno_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "representante"
     t.index ["interno_id"], name: "index_parientes_on_interno_id"
   end
 
