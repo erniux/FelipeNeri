@@ -18,8 +18,6 @@ gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'gritter', '~> 1.2'
-gem 'wicked_pdf', '~> 2.1'
-gem 'wkhtmltopdf-binary'
 gem 'prawn', '~> 2.3'
  
 
