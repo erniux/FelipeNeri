@@ -4,12 +4,16 @@ class EgresoPdf < Prawn::Document
 		@interno = interno
 		titulos("HOJA DE EGRESO", 235, 635)  
 		usuario
+	end
 
+	def logo
+		@imagen = Config.where(desc: 'Documentos').first.try(:logo)
+		@logo = StringIO.open(@imagen.download)
+		image @logo, scale: 0.10, :at => [0,700], :width => 75
 	end
 
 	def titulos(hoja, x, y)
-		top_layer = "#{Rails.root}/app/assets/images/logo.jpg"
-		image top_layer, :at => [50,700], :width => 75
+		logo
 		draw_text "CLINICA DE REHABILITACION CONTRA LAS ADDICCIONES", size: 10, style: :bold, at: [150,680]
  		draw_text "FELIPE NERI", size: 10, style: :bold, at: [250, 665]
  		draw_text  hoja, size: 8, style: :bold, at: [x, y]

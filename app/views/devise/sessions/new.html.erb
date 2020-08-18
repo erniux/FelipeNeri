@@ -15,7 +15,7 @@
       <% imagen = Config.where(desc: 'Portada').first.try(:logo)  %>
       <% if imagen  %>
         <%= image_tag(Config.where(desc: 'Portada').first.logo)  %>
-        <% end %>
+      <% end %>
   </div>
   <% end %>
 </div>
