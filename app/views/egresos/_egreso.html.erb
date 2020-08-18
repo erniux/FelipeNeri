@@ -1,9 +1,13 @@
 <br> 	
  <div class="row"> 
-	<div class="col-md-10">
+	<div class="col-md-5">
 		<%= egreso.fecha_egreso  %>
-		<% link_to egreso.fecha_egreso, interno_ingreso_path(@interno, egreso)  %> 
 	</div>
+	<div class="col-md-5">
+		<% nombre_archivo = egreso.documento.filename.to_s if egreso.documento.attached?  %>
+        <%= link_to nombre_archivo.truncate(25), egreso.documento, target: '_blank' if egreso.documento.attached?  %>
+	</div>
+
 	<div class="col-md-1">
 		<%= link_to edit_interno_egreso_path(@interno, egreso), class: "btn alert-info", local: true  do %>
 			 <%= fa_icon 'file' %>
@@ -15,3 +19,5 @@
 		<% end %>
 	</div>
 </div>
+
+ 

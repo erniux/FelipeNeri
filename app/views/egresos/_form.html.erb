@@ -72,6 +72,15 @@
 				<%= form.check_box :defuncion, class:"form-control" %>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= link_to 'Generar Hoja Egreso', ultimo_egreso_path(@interno, format: :pdf), class: "btn btn-outline-success", target: "_blank" %>
+			</div>
+			<div class="col-md-6">
+      			<%= form.file_field :documento,  class: "btn btn-outline-primary" %>
+  			</div>
+		 
+		</div>
 
 		<br>
 		<div class="row">

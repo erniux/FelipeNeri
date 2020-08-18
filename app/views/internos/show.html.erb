@@ -9,13 +9,21 @@
 	<a class="btn alert-primary form-control" data-toggle="collapse" href="#ingresos" role="button" aria-expanded="false" aria-controls="ingresos">Ingresos</a>
 	<div class="collapse multi-collapse" id="ingresos">
 		<% if @interno.ingresos.any? %>
-			<%= render @interno.ingresos.order(fecha_hora: :asc) %>
+			<table class="table">
+ 				<thead>
+ 					<tr>
+ 						<th>Fecha y hora Ingreso</th>
+ 						<th>Archivo Ingreso firmado</th>
+ 						<th>Acciones</th>
+ 					</tr>
+ 				</thead></table>
+				<%= render @interno.ingresos.order(fecha_hora: :asc) %>
 		<% end %>
-		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarTratamiento" aria-expanded="false" aria-controls="agregarTratamiento">
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarIngreso" aria-expanded="false" aria-controls="agregarIngreso">
     		Agregar Ingreso
   		</button>
 	 
-		<div class="collapse" id="agregarTratamiento">
+		<div class="collapse" id="agregarIngreso">
   			<div class="card card-body">
     			<%= render 'ingresos/form', ingreso: @interno.ingresos.build %>	
   			</div>
@@ -92,12 +100,5 @@
 	</div>
 <hr>
 
-<a class="btn alert-danger form-control" data-toggle="collapse" href="#documentos" role="button" aria-expanded="false" aria-controls="documentos">Documentos</a>
-	<div class="collapse multi-collapse" id="documentos">
-		 
-		<h4>Documentos:</h4>
-		<p><%= link_to 'Generar Hoja Ingreso', ultimo_ingreso_path(@interno, format: :pdf), class: "btn btn-outline-success", target: "_blank" %>
-		<p><%= link_to 'Generar Hoja Egreso', ultimo_egreso_path(@interno, format: :pdf), class: "btn btn-outline-primary", target: "_blank" %>
-		 
-	</div>
+ 
 </div>

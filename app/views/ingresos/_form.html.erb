@@ -105,9 +105,19 @@
 			<div class="col-md-12">
 				<%= form.label :'duración del tratamiento' %>:&nbsp;
 				<%= form.text_field :duracion, class:"form-control", placeholder: 'Duración del tratamiento en semanas', required: true %>
-
 			</div>
+		</div><br>
+		<div class="row">
+			<div class="col-md-6">
+				<%= link_to 'Generar Hoja Ingreso', ultimo_ingreso_path(@interno, format: :pdf), class: "btn btn-outline-success", target: "_blank" %>
+			</div>
+			<div class="col-md-6">
+      			<%= form.file_field :documento,  class: "btn btn-outline-primary" %>
+  			</div>
+		 
 		</div>
+		 
+
 		<br>
 		<div class="row">
 			<%= form.submit  class: "btn alert-primary form-control" %>

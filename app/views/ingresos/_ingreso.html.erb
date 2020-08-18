@@ -1,8 +1,12 @@
- <br> 	
+ <br> 
  <div class="row"> 
-	<div class="col-md-10">
+	<div class="col-md-5">
 		<%= ingreso.fecha_hora.strftime("%d/%m/%Y %H:%M") %>
-		<% link_to ingreso.fecha_hora.strftime("%d/%m/%Y %H:%M"), interno_ingreso_path(@interno, ingreso)  %> 
+	</div>
+	<div class="col-md-5">
+		<% nombre_archivo = ingreso.documento.filename.to_s if ingreso.documento.attached?  %>
+        <%= link_to nombre_archivo.truncate(25), ingreso.documento, target: '_blank' if ingreso.documento.attached?  %>
+
 	</div>
 	<div class="col-md-1">
 		<%= link_to edit_interno_ingreso_path(@interno, ingreso), class: "btn alert-info", local: true  do %>
