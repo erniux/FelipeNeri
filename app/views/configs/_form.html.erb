@@ -1,0 +1,25 @@
+<div class="container-interno">
+<%= form_with(model: config, local: true) do |form| %>
+  <% if config.errors.any? %> 
+    <% config.errors.full_messages.each do |message| %>
+       <%= js add_gritter(message, :title => "config.", :sticky => false,  :class_name => "custom_error") %>
+    <% end %>
+  <% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= form.label :'tipo Logo' %>
+    <%= form.select(:desc, ['Portada','Documentos'], { include_blank: true }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.label :'Cargar archivo' %>
+    <%= form.file_field :logo, class: 'form-control' %>
+  </div>
+</div><br>
+
+  <div class="actions">
+    <%= form.submit "Guardar", class: "btn alert-primary" %>
+  </div>
+<% end %>
+</div>

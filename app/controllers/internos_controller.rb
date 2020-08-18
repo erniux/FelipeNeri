@@ -58,7 +58,7 @@ def update
       params.require(:interno).permit(:nombre, :ap_paterno, :ap_materno, :fecha_nacimiento, :calle, :numero, :interior, 
                                       :colonia, :municipio, :estado, :telefono_fijo, :telefono_celular, :telefono_otro, 
                                       :nacionalidad, :estado_civil, :escolaridad, :ocupacion, :sexo, :servicio_medico,
-                                      :num_afiliacion, :codigo_postal)
+                                      :num_afiliacion, :codigo_postal, :documento)
     end
  
 end

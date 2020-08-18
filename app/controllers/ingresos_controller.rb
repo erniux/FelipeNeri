@@ -51,7 +51,7 @@ def update
       params.require(:ingreso).permit(:fecha_hora,:referido_institucion,:institucion_referencia,:hoja_referencia,
                                       :tipo_ingreso,:motivo_ingreso,:descripcion_estado_salud,:hombre,:mayor_edad,:dependencias,
                                       :consecuencias,:transtorno_mental,:cumple,:referirlo,:nombre_entrevistador,:cargo_entrevistador,
-                                      :duracion)
+                                      :duracion, :documento)
     end
  
 end

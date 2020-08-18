@@ -8,4 +8,5 @@ class Interno < ApplicationRecord
 	                      :municipio, :estado, :telefono_fijo, :telefono_celular, :nacionalidad, 
 	                      :estado_civil, :escolaridad, :ocupacion, :sexo
 
+	has_one_attached :documento                     		 
 end

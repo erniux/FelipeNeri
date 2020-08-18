@@ -1,0 +1,35 @@
+<%= js add_gritter(flash[:notice], :title => "Notice", :sticky => false, :time => 1000, :class_name => "custom_gritter") %>
+
+<div class="container-interno">   
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @config.each do |config| %>
+      <tr>
+         
+        <td><%= config.desc %></td>
+        <td><%= image_tag(config.logo, width: 100) if config.logo.attached? %> </td>
+        <td><%= link_to edit_config_path(config), class: "btn alert-info", local: true  do %>
+          <%= fa_icon 'file' %>
+        <% end %></td>
+        <td><%= link_to config, method: :delete, data:{ confirm: '¿Confirma eliminar el registro?'}, class: "btn alert-danger"  do %>
+          <%= fa_icon 'trash'  %>
+        <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if @config.count < 2 %> 
+  <%= link_to 'Cargar Archivos', new_config_path %>
+<% end %>
+</div>
+ 
+

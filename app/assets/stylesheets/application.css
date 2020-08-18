@@ -17,8 +17,7 @@
  *= require_tree .
  *= require_self
  */ 
-/*@import "gritter";
-@import "pdf"; */
+ 
 
 .navbar {
   -moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -77,7 +76,7 @@
 }
 
 .imagen {
-  content: url("logo.jpg");
+  /*content: url("logo.jpg"); */
   margin-top: 3rem;
   margin-left: 6rem;
   width: 60%;

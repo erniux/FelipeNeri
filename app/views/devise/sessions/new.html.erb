@@ -12,6 +12,7 @@
   </div>
   <div class="col-md-8">
     <div class="imagen"></div>
+      <%= image_tag(Config.where(desc: 'Portada').first.logo)  %>
   </div>
   <% end %>
 </div>

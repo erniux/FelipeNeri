@@ -19,6 +19,7 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'gritter', '~> 1.2'
 gem 'prawn', '~> 2.3'
+gem "google-cloud-storage", "~> 1.8", require: false
  
 
 group :development, :test do
