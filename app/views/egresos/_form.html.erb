@@ -79,12 +79,12 @@
 			<div class="col-md-6">
       			<%= form.file_field :documento,  class: "btn btn-outline-primary" %>
   			</div>
-		 
 		</div>
 
 		<br>
 		<div class="row">
-			<%= form.submit  class: "btn alert-primary form-control" %>
+			<%= form.submit  class: "btn alert-primary form-control" %><br><br>
+			<%= link_to 'Cancelar', @interno, class: "btn alert-danger form-control" %>
 		</div>
 	<% end %>
 
