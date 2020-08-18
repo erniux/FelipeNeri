@@ -12,7 +12,10 @@
   </div>
   <div class="col-md-8">
     <div class="imagen"></div>
-      <%= image_tag(Config.where(desc: 'Portada').first.logo)  %>
+      <% imagen = Config.where(desc: 'Portada').first.try(:logo)  %>
+      <% if imagen  %>
+        <%= image_tag(Config.where(desc: 'Portada').first.logo)  %>
+        <% end %>
   </div>
   <% end %>
 </div>
