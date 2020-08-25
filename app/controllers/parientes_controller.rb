@@ -46,7 +46,7 @@ def update
 
      
     def pariente_params
-      params.require(:pariente).permit(:nombre, :ap_paterno, :ap_materno, :fecha_nacimiento, :ocupacion, :parentesco, :calle, :numero, 
+      params.require(:pariente).permit(:interno_id, :nombre, :ap_paterno, :ap_materno, :fecha_nacimiento, :ocupacion, :parentesco, :calle, :numero, 
                                        :interior, :colonia, :municipio, :estado, :telefono_fijo, :telefono_celular, :telefono_recados, :representante)
     end
  
