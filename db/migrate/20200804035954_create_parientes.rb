@@ -16,7 +16,7 @@ class CreateParientes < ActiveRecord::Migration[6.0]
       t.string :telefono_fijo
       t.string :telefono_celular
       t.string :telefono_recados   
-      t.references :internos, null: false, foreign_key: true
+      t.references :interno, null: false, foreign_key: true
 
       t.timestamps
     end
