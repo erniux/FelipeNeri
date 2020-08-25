@@ -1,4 +1,4 @@
-<div class="container-interno">
+	<div class="container-interno">
 	<%= form_with(model: [ @interno, ingreso ], local: true) do |form| %>
 		<div class="row">
 			<div class="col-md-4">
@@ -109,7 +109,7 @@
 		</div><br>
 		<div class="row">
 			<div class="col-md-6">
-				<%= link_to 'Generar Hoja Ingreso', ultimo_ingreso_path(@interno, format: :pdf), class: "btn btn-outline-success", target: "_blank" %>
+				<h4>Subiir hoja de ingreso firmada</h4>	 
 			</div>
 			<div class="col-md-6">
       			<%= form.file_field :documento,  class: "btn btn-outline-primary" %>

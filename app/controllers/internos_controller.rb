@@ -20,7 +20,7 @@ def create
 
     respond_to do |format|
       if @interno.save
-        format.html { redirect_to interno_path, notice: 'Registro creado con éxito.' }
+        format.html { redirect_to @interno, notice: 'Registro creado con éxito.' }
           
       else
         format.html { render :new }
