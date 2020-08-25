@@ -8,7 +8,7 @@
 
 	<a class="btn alert-primary form-control" data-toggle="collapse" href="#ingresos" role="button" aria-expanded="false" aria-controls="ingresos">Ingresos</a>
 	<div class="collapse multi-collapse" id="ingresos">
-		<% if @interno.ingresos.any? %>
+		<% if @interno.ingresos.count > 0 %>
 			<%= render @interno.ingresos.order(fecha_hora: :asc) %>
 		<% end %>
 		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarTratamiento" aria-expanded="false" aria-controls="agregarTratamiento">
@@ -26,7 +26,7 @@
  <hr>
  	<a class="btn alert-secondary form-control" data-toggle="collapse" href="#parientes" role="button" aria-expanded="false" aria-controls="parientes">Familiares</a>
 	<div class="collapse multi-collapse" id="parientes">
-		<% if @interno.parientes.any? %>
+		<% if @interno.parientes.count > 0  %>
 			<%= render @interno.parientes.order(id: :asc) %>
 		<% end %>
 		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarPariente" aria-expanded="false" aria-controls="agregarPariente">
@@ -44,7 +44,7 @@
 
 <a class="btn alert-info form-control" data-toggle="collapse" href="#tratamientos" role="button" aria-expanded="false" aria-controls="tratamientos">Tratamientos</a>
 	<div class="collapse multi-collapse" id="tratamientos">
-		<% if @interno.tratamientos.any? %>
+		<% if @interno.tratamientos.count > 0 %>
 			<%= render @interno.tratamientos.order(fecha_inicio: :asc) %>
 		<% end %>
 		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarTratamiento" aria-expanded="false" aria-controls="agregarTratamiento">
@@ -61,7 +61,7 @@
 
 <a class="btn alert-warning form-control" data-toggle="collapse" href="#egresos" role="button" aria-expanded="false" aria-controls="egresos">Egresos</a>
 	<div class="collapse multi-collapse" id="egresos">
-		<% if @interno.egresos.any? %>
+		<% if @interno.egresos.count > 0 %>
 			<%= render @interno.egresos.order(fecha_egreso: :asc) %>
 		<% end %>
 		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agregarEgreso" aria-expanded="false" aria-controls="agregarEgreso">
