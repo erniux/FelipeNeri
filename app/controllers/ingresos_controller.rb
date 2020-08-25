@@ -28,7 +28,6 @@ def update
     end
   end
 
-   
   def destroy
     @ingreso.destroy
     respond_to do |format|

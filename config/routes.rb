@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-   
-   
   get 'paginas/inicio', as: 'inicio' 
   get '/paginas/ingreso/:id', to: 'paginas#ingreso', as: 'ultimo_ingreso'
   get '/paginas/egreso/:id', to: 'paginas#egreso', as: 'ultimo_egreso'
