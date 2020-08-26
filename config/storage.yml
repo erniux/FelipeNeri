@@ -18,7 +18,7 @@ local:
 google:
   service: GCS
   project: felipeneri
-  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
+  credentials: <%= Rails.root.join("config/secrets/felipeneri.json") %>
   bucket: felipeneri_bucket-1
 
  
