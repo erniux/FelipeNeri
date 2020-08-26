@@ -21,6 +21,8 @@ google:
   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
   bucket: felipeneri_bucket-1
 
+  
+
  
 google_dev:
   service: GCS

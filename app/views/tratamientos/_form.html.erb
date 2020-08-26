@@ -2,18 +2,35 @@
 
 	<%= form_with(model: [ @interno, tratamiento ], local: true) do |form| %>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<%= form.label :'tratamiento' %>:&nbsp;
 			<%= form.text_field :nombre_tratamiento, class: "form-control", required: true %>
 		</div>
-		<div class="col-md-3">
+	</div>
+	<div class="row">
+		<div class="col-md-6">
 			<%= form.label :fecha_inicio %>:&nbsp;
-			<%= form.date_field :fecha_inicio, class: "form-control", required: true %>
-		</div>
-		<div class="col-md-3">
-			<%= form.label :fecha_fin %>:&nbsp;
-			<%= form.date_field :fecha_fin, class: "form-control", required: true %>
-		</div>
+			<div class="input-group date" id="fechainiciotrat" data-target-input="nearest">
+            	<%= form.date_field :fecha_inicio, class: "form-control datetimepicker-input", data_target: "#fechainiciotrat" , required: true %>
+           	 	<div class="input-group-append" data-target="#fechainiciotrat" data-toggle="datetimepicker">
+                	<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+             	</div> 
+         	</div>
+         </div>
+         <div class="col-md-6">
+			<%= form.label :fecha_inicio %>:&nbsp;
+			<div class="input-group date" id="fechafintrat" data-target-input="nearest">
+            	<%= form.date_field :fecha_fin, class: "form-control datetimepicker-input", data_target: "#fechafintrat" , required: true %>
+           	 	<div class="input-group-append" data-target="#fechafintrat" data-toggle="datetimepicker">
+                	<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+             	</div> 
+         	</div>
+         </div>
+         
+
+
+
+		 
 	</div><br>
 	<div class="row">
 		<div class="col-md-4">
