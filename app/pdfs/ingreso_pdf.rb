@@ -98,7 +98,7 @@ class IngresoPdf < Prawn::Document
 	end
 
 	def edad(fecha, x, y)
-		draw_text "#{((Time.zone.now - fecha.to_time) / 1.year.seconds).floor}", size: 8, at: [x,y]
+		draw_text "#{((Time.zone.now - fecha.to_time) / 1.year.seconds).floor}", size: 8, at: [x,y]	
 	end
 
 	def calc_edad(fecha)
