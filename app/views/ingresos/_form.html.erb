@@ -2,8 +2,13 @@
 	<%= form_with(model: [ @interno, ingreso ], local: true) do |form| %>
 		<div class="row">
 			<div class="col-md-4">
-				<%= form.label :'fecha_hora' %>:&nbsp;
-				<%= form.date_field :fecha_hora, class: "form-control", placeholder: "AAAA/MM/DD HH:MM", required: true %>
+ 				<div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                    <%= form.datetime_field :fecha_hora, class: "form-control datetimepicker-input", data_target: "#datetimepicker2" , required: true %>
+                    <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+
 			</div>
 			<div class="col-md-3">
 				<p>¿Lo refiere alguna Institutción?</p>

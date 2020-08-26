@@ -3,7 +3,13 @@
 		<div class="row">
 			<div class="col-md-4">
 				<%= form.label :'fecha_egreso' %>:&nbsp;
-				<%= form.date_field :fecha_egreso, class:"form-control", required: true %>
+				 
+				<div class="input-group date" id="datetimepickeregreso" data-target-input="nearest">
+                    <%= form.datetime_field :fecha_egreso, class: "form-control datetimepicker-input", data_target: "#datetimepickeregreso" , required: true %>
+                    <div class="input-group-append" data-target="#datetimepickeregreso" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
 			</div>
 			 
 			<div class="col-md-4">

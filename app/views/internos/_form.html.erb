@@ -13,7 +13,14 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">Fecha de Nacimiento <%= form.date_field :fecha_nacimiento, class: "form-control" %></div>
+  <div class="col-md-6">Fecha de Nacimiento:
+    <div class="input-group date" id="datetimepickeregreso" data-target-input="nearest">
+      <%= form.date_field :fecha_nacimiento, class: "form-control datetimepicker-input", data_target: "#datetimepickeregreso" , required: true %>
+      <div class="input-group-append" data-target="#datetimepickeregreso" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+  </div>
   <div class="col-md-6">
         <%= form.label :sexo %>:&nbsp;
         <%= form.select(:sexo, ['Masculino','Femenino', 'Otro'], { include_blank: true }, { class: 'form-control' }) %>

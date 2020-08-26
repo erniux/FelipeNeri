@@ -20,6 +20,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'gritter', '~> 1.2'
 gem 'prawn', '~> 2.3'
 gem "google-cloud-storage", "~> 1.8", require: false
+gem 'bootstrap4-datetime-picker-rails'
  
  
 

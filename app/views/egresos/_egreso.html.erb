@@ -1,7 +1,7 @@
 <br> 	
  <div class="row"> 
 	<div class="col-md-5">
-		<%= egreso.fecha_egreso  %>
+		<%= egreso.fecha_egreso.strftime("%d/%m/%Y")  %>
 	</div>
 	<div class="col-md-5">
 		<% nombre_archivo = egreso.documento.filename.to_s if egreso.documento.attached?  %>
